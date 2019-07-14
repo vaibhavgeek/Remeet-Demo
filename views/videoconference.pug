@@ -1,28 +1,6 @@
-html
-  head
-    link(rel='stylesheet', href='css/demo.css')
-    link(rel='stylesheet', href='css/common.css')
-    link(rel='stylesheet', href='css/main.css')
-    link(rel='stylesheet', href='css/toastify.min.css')
-    title Chat
-    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-    link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css')
-    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js')
-    script(src='https://unpkg.com/wavesurfer.js')
-    script(src='https://webrtc.github.io/adapter/adapter-latest.js')
-    script(type='text/javascript').
-      function requestVideo() {
-      navigator.getUserMedia({video: true, audio: true},
-      getUserMediaOkCallback, getUserMediaFailedCallback);
-      }
-      function getUserMediaFailedCallback(error) {
-      alert("User media request denied with error code " + error.code);
-      }
-      function getUserMediaOkCallback(stream) {
-      document.getElementById("view1").srcObject = stream;
-      }
-  body(onload='requestVideo();')
+extends layout
+
+block content
     nav.navbar.navbar-expand-lg.navbar-light.bg-light
       a.navbar-brand(href='#') Remeet
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
